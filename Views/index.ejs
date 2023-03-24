@@ -4,27 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/normalize.css">
-    <link rel="stylesheet" href="/public/skeleton.css">
-    <title>Document</title>
+    <title>All Budgets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 </head>
 <body>
-    <div class = "container">
-    <h1>Budgtr ALL</h1>
-    <table>
-    <% for(let i = 0; i < budget.length; i++) { %>
-        <h3><% budget[i].date %></h3>
-        </a>
-        <tr>
-            <a href="/models/budget.js">
-                <% budget[i].name %>
-            </a>
-        </tr>
-        <td>
-            
-        </td>
-    </table>
-   </div>
-   <% } %>
+    <div class="container">
+        <h1>Budgtr ALL</h1>
+        <table>
+            <% let total = 0; %>
+            <% for(let i=0; i<budgets.length; i++) {
+                total = total + budgets[i].amount %>
+                <tr>
+                    <td>
+                        <%= budgets[i].date %>
+                    </td>
+                    <td>
+                        <a href="/budgets/<%= i; %>"><%= budgets[i].name %></a>
+                    </td>
+                    <td>
+                        <%= budgets[i].amount %>
+                    </td>
+                    <td>
+                        <%= budgets[i].from %>
+                    </td>
+                    <td>
+                        <%= budgets[i].tags %>
+                    </td>
+                </tr>
+                
+                <% } %>
+                <tr>
+                    BankAccount: <%= total%>
+                </tr>
+        
+        </table>
+    
+        <button onclick = "window.location.href='http://localhost:3000/budgets/new';">NEW</button>
+    </div>
+    
 </body>
 </html>
+
+
+<!-- 
+<table class="u-full-width">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dave Gamache</td>
+        <td>26</td>
+        <td>Male</td>
+        <td>San Francisco</td>
+      </tr>
+      <tr>
+        <td>Dwayne Johnson</td>
+        <td>42</td>
+        <td>Male</td>
+        <td>Hayward</td>
+      </tr>
+    </tbody>
+  </table> -->

@@ -4,7 +4,7 @@ const methodOverride = require('method-override')
 
 // Models
 const models = require('./models/budget')
-const budget = models.budget
+const budgets = models.budget
 
 app.set('view engine', 'ejs');
 
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs', {budget: budget});
+    res.render('index.ejs', {budgets: budgets});
 });
 
 app.get('/budgets/:index', (req, res) => {
