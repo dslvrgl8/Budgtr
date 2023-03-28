@@ -9,17 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="/fruits">
-        <label for="date">Name:</label>
+    <form method="POST" action="/budgets">
+        <label for="date">Date:</label>
         <input type="text" name="date" id="date">
         <br>
-        <label for="name">Color:</label>
+        <label for="name">Name:</label>
         <input type="text" name="name" id="name">
         <br>
-        <label for="amount">Is it ready to eat? </label>
-        <input type="checkbox" name="amount" id="amount">
+        <label for="amount">Amount: </label>
+        <input type="text" name="amount" id="amount">
         <br>
-        <label for="from">from URL: </label>
+        <label for="from">From: </label>
+        <input type="text" name="from" id="from">
+
+        <label for="from">Tags: </label>
         <input type="text" name="from" id="from">
     
         <input type="submit" value="Create Budget" />

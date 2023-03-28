@@ -1,4 +1,4 @@
- budget = [
+module.exports =  [
     {
       date: "April 1",
       name: "Income",
@@ -70,7 +70,3 @@
       tags: ["pets"]
     },
   ];
-
-  module.exports = {
-    budget,
-  }

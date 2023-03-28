@@ -13,8 +13,8 @@
         <h1>Budgtr ALL</h1>
         <table>
             <% let total = 0; %>
-            <% for(let i=0; i<budgets.length; i++) {
-                total = total + budgets[i].amount %>
+            <% for(let i=0; i<budgets.length; i++) { %>
+               <% total = total + budgets[i].amount %>
                 <tr>
                     <td>
                         <%= budgets[i].date %>
@@ -40,7 +40,7 @@
         
         </table>
     
-        <button onclick = "window.location.href='http://localhost:3000/budgets/new';">NEW</button>
+        <a href = "/budgets/new">NEW</a>
     </div>
     
 </body>

@@ -10,8 +10,24 @@
 </head>
 <body>
     <div class = 'container'>
-        <h1> <%= budget[i].name%></h1>
-        <button>BACK</button>
-    </div>
+        <table>
+        <tr>
+            <td>
+                <%= budgetItem.date %>
+            </td>
+            <td>
+                <%= budgetItem.name %>
+            </td>
+            <td>
+                <%= budgetItem.amount %>
+            </td>
+            <td>
+                <%= budgetItem.from %>
+            </td>
+            <td>
+                <%= budgetItem.tags %>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
