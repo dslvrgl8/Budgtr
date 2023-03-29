@@ -4,6 +4,8 @@ const methodOverride = require('method-override')
 const budgets = require('./models/budget')
 
 app.set('view engine', 'ejs');
+// Middleware
+app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
     res.send("Hello Adult Life")
@@ -18,7 +20,10 @@ app.get('/budgets/new', (req, res) => {
 });
 
 app.post('/budgets', (req, res) => {
-    res.send('post time')
+    console.log(req.body)
+    req.body.amount = parseInt(req.body.amount)
+    budgets.push(req.body)
+    res.redirect('/budgets')
 });
 
 app.get('/budgets/:id', (req, res) => {
